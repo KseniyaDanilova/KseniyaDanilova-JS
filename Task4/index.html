@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Task4-form</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <form class="f-form" id="form" action="#" method="POST">
+        <div class="f-form__box">
+            <div>
+                <div class="f-form__title">
+                    Form Action
+                </div>
+                <div class="f-form__number">
+                    _mc4wp_action
+                </div>
+            </div>
+            <div class="f-form__description">
+                This field will allow your visitors to choose whether they would like to subscribe or unsubscribe
+            </div>
+            <div class="f-field">
+                <div class="f-field__box">
+                    <div class="f-field__label">Field Label</div>
+                    <input placeholder="Form Action" class="f-field__action" type="text" name="FormAction" id="FormAction">
+                </div>
+            </div>
+
+            <div class="f-field">
+                <div class="f-field__box">
+                    <div class="f-field__label">Choice Type</div>
+                    <select id="select-radio-button">
+                        <option value="RadioButton" selected>Radio Button</option>
+                        <option value="Checkbox">Checkbox</option>
+                    </select>
+                </div>
+            </div>
+            <div class="f-field">
+                <div class="f-field__box">
+                    <div class="f-field__label">Choices</div>
+                    <div class="f-borded-checkbox_outer" id="choose-one">
+                        <input class="sub-unsub" type="radio" value="s" name="sub" id="sub">
+                        <div class="f-borded-checkbox_inner">Subscribe</div>
+                        <br>
+                        <input class="sub-unsub" type="radio" value="uns" name="unsub" id="unsub">
+                        <div class="f-borded-checkbox_inner">Unsubscribe</div>
+                    </div>
+                </div>
+            </div>
+            <div class="f-field">
+                <div class="f-field__box">
+                    <input type="checkbox" value="yes" name="Wrap" id="Wrap">Wrap in paragraph tags?
+                </div>
+            </div>
+            <div class="f-field">
+                <div class="f-field__box">
+                    <input class="f-form__button" type="submit" value="Add to form" name="blue-button" id="blue-button">
+                </div>
+            </div>
+    </form>
+    <script>
+        const fieldAction = document.getElementById("FormAction");
+        const selectButton = document.getElementById("select-radio-button");
+        const subUnsub = document.getElementByName("sub-unsub");
+        const choice = document.querySelector(".f-borded-checkbox_outer");
+        const wrapChoice = document.getElementById("Wrap");
+
+        fieldAction.addEventListener(function (e) {
+            localStorage.setItem("fieldAction", fieldAction.value);
+        });
+
+        selectButton.addEventListener(function (e) {
+            localStorage.setItem("selectButton", selectButton.value);
+        });
+
+        subUnsub.addEventListener(function (e) {
+            for (var i = 0; i < choice.length; i++) {
+                if (choice[i].checked) {
+                    localStorage.setItem("subUnsub", choice[i].value);
+                }
+            }
+        });
+
+        wrapChoice.addEventListener(function (e) {
+            localStorage.setItem("wrapChoice", wrapChoice.checked);
+        });
+
+        const clearState = function () {
+            localStorage.removeItem("fieldAction");
+            localStorage.removeItem("selectButton");
+            localStorage.removeItem("subUnsub");
+            localStorage.removeItem("wrapChoice");
+        };
+
+        const updateState = function () {
+            if (performance.navigation.type === 1) {
+                clearState();
+            }
+            fieldAction.value = localStorage.getItem("fieldAction") || "";
+            selectButton.value = localStorage.getItem("selectButton");
+            document.querySelector("input[value=" + localStorage.getItem("subUnsub") + "]").checked = true;
+            wrapChoice.checked = localStorage.getItem("wrapChoice") === "true" ? true : false;
+        };
+
+        window.addEventListener(updateState());
+    </script>
+</body>
+
+</html>
