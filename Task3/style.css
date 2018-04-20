@@ -1,0 +1,78 @@
+
+.f-form__box{
+    margin: auto;
+    padding-top:10px;
+    padding-left: 10px;
+    border-bottom: 1px solid black;
+    width:300px;
+    height:330px;
+    background-color: rgba(211, 211, 211, 0.2);
+    font-size:12px;
+
+}
+.f-field__action{
+    width:280px;
+}
+.f-form__title{
+    display: inline-block;
+    font-weight: bold;
+    font-size:14px;
+}
+.f-form__number{
+    display: inline-block;
+    background-color:rgba(211, 211, 211, 0.7); 
+}
+.f-form__description{
+    display:flex;
+    flex-direction: flow;
+    margin-top: 1em;
+
+}
+.f-field__box{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.f-field__label{
+    font-weight:bold;
+     
+}
+.f-borded-checkbox_outer{
+    width:250px;
+    border:0.5px solid rgba(211, 211, 211, 0.7);
+}
+.f-borded-checkbox_inner{
+    display: inline-block;
+    margin-bottom:3px;
+    padding-left:3px;
+    width:200px;
+    border:0.5px solid rgba(211, 211, 211, 0.7);
+}
+.f-form__button{
+    background-color: blue;
+    color:white;
+    border-radius: 5px;
+    border: none;
+    padding:0.5em;
+}
+.select {
+    position:relative;   
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    zoom: 1;
+    *display: inline;
+    margin-top:40px;
+}
+.select:before {
+    content: "\f0dc";
+    font-family: FontAwesome;
+    color: #000;
+    padding:8px;
+    position:relative;
+    right:35px;
+    top:0px;
+    background:red;
+    z-index:-1;
+    width:10%;
+    line-height:10%;
+}
