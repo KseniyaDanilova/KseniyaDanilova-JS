@@ -1,0 +1,62 @@
+@font-face{
+	font-family: fontawesome;
+	src: url(./fonts/fontawesome-webfont.woff) format("woff");
+}
+
+#calendar2 {
+    width:350px;
+    font: monospace;
+    border: 1px solid grey;
+    line-height: 1.2em;
+    font-size: 15px;
+    text-align: center;
+  }
+  #calendar2 thead tr:first-child {
+    height:40px;
+    border:1px solid lightgray;
+    background-color: rgba(211, 211, 211,0.5);
+    font-weight:bold;
+    font-size:20px;
+  }
+.calendar__left-arrow:before{
+    font-family:fontawesome; 
+    content: '\f0a8';
+  }
+.calendar__right-arrow:before{
+    font-family:fontawesome;
+    content: '\f0a9';
+}
+.calendar__left-arrow:hover{
+    text-shadow:0 0 10px yellow;
+}
+.calendar__right-arrow:hover{
+    text-shadow:0 0 10px yellow;
+}
+
+#calendar2 thead tr:last-child {
+  
+    font-size: small;
+    color: rgb(85, 85, 85);
+  }
+  #calendar2 thead tr:nth-child(1) td:nth-child(2) {
+  
+    color: rgb(50, 50, 50);
+  }
+  #calendar2 thead tr:nth-child(1) td:nth-child(1):hover, #calendar2 thead tr:nth-child(1) td:nth-child(3):hover {
+   
+    cursor: pointer;
+  }
+  #calendar2 tbody td {
+    border:1px solid lightgray;
+    background-color: rgba(211, 211, 211,0.3);
+    
+  }
+  #calendar2 tbody td.today {
+    background: rgba(255, 255, 0, 0.4);
+    
+  }
+  .calendar__days{
+    height:40px;
+    font-weight:bold;
+    font-size: 20px;
+  }
