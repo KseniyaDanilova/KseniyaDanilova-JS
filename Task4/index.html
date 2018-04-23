@@ -68,15 +68,15 @@
         const choice = document.querySelector(".f-borded-checkbox_outer");
         const wrapChoice = document.getElementById("Wrap");
 
-        fieldAction.addEventListener(function (e) {
+        fieldAction.addEventListener('click',function (e) {
             localStorage.setItem("fieldAction", fieldAction.value);
         });
 
-        selectButton.addEventListener(function (e) {
+        selectButton.addEventListener('click',function (e) {
             localStorage.setItem("selectButton", selectButton.value);
         });
 
-        subUnsub.addEventListener(function (e) {
+        subUnsub.addEventListener('click',function (e) {
             for (var i = 0; i < choice.length; i++) {
                 if (choice[i].checked) {
                     localStorage.setItem("subUnsub", choice[i].value);
@@ -84,20 +84,20 @@
             }
         });
 
-        wrapChoice.addEventListener(function (e) {
+        wrapChoice.addEventListener('click',function (e) {
             localStorage.setItem("wrapChoice", wrapChoice.checked);
         });
 
-        const clearState = function () {
+        const remove = function () {
             localStorage.removeItem("fieldAction");
             localStorage.removeItem("selectButton");
             localStorage.removeItem("subUnsub");
             localStorage.removeItem("wrapChoice");
         };
 
-        const updateState = function () {
+        const update = function () {
             if (performance.navigation.type === 1) {
-                clearState();
+                remove();
             }
             fieldAction.value = localStorage.getItem("fieldAction") || "";
             selectButton.value = localStorage.getItem("selectButton");
@@ -105,7 +105,7 @@
             wrapChoice.checked = localStorage.getItem("wrapChoice") === "true" ? true : false;
         };
 
-        window.addEventListener(updateState());
+        window.addEventListener(update());
     </script>
 </body>
 
