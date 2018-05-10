@@ -1,62 +1,99 @@
+
 @font-face{
 	font-family: fontawesome;
 	src: url(./fonts/fontawesome-webfont.woff) format("woff");
 }
 
-#calendar2 {
-    width:350px;
-    font: monospace;
-    border: 1px solid grey;
-    line-height: 1.2em;
-    font-size: 15px;
+
+.calendar__content {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 2rem;
+    width: 350px;
+    background-color: whitesmoke;
+    border: 1px solid lightgray;
+    border-radius: 2px;
+}
+
+.calendar__title-content {
+    margin-top: 0.5rem;
     text-align: center;
-  }
-  #calendar2 thead tr:first-child {
-    height:40px;
-    border:1px solid lightgray;
-    background-color: rgba(211, 211, 211,0.5);
-    font-weight:bold;
-    font-size:20px;
-  }
-.calendar__left-arrow:before{
+    background-color: lightgray;
+    border: 1px solid lightgrey;
+    border-radius: 2px;
+    width: 330px;
+}
+
+.calendar__title {
+   width: 85%;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.calendar__button {
+    font-weight: 600;
+    cursor: pointer;
+    line-height: 50px;
+    font-size: 1.3rem;
+    color: grey;
+}
+.calendar__button_left:before{
     font-family:fontawesome; 
     content: '\f0a8';
-  }
-.calendar__right-arrow:before{
+}
+
+.calendar__button_right:before{
     font-family:fontawesome;
     content: '\f0a9';
 }
-.calendar__left-arrow:hover{
-    text-shadow:0 0 10px yellow;
-}
-.calendar__right-arrow:hover{
-    text-shadow:0 0 10px yellow;
+
+.calendar__button:hover{
+    text-shadow: 3px 0px rgba(255, 255, 0, 0.8);
 }
 
-#calendar2 thead tr:last-child {
-  
-    font-size: small;
-    color: rgb(85, 85, 85);
-  }
-  #calendar2 thead tr:nth-child(1) td:nth-child(2) {
-  
-    color: rgb(50, 50, 50);
-  }
-  #calendar2 thead tr:nth-child(1) td:nth-child(1):hover, #calendar2 thead tr:nth-child(1) td:nth-child(3):hover {
-   
+.calendar__heading {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 330px;
+    font-weight: 600;
+    font-size: 1rem;
+    display: inline-block;
+    justify-content: space-around;
+}
+.calendar__today{
+    background-color: yellow;
+}
+.calendar__day {
+    display: inline-block;
+    width: calc(100% / 7);
+    text-align: center;
+}
+
+.calendar__weeks-content {
+    width: 330px;
+}
+
+.calendar__week {
+    margin-bottom: 5px;
+    background-color:whitesmoke;
+}
+
+.calendar__week_day {
+    display: inline-block;
+    justify-content: space-between;
+    padding-right: 4px;
+    margin-right: 4px;
+    width: 11%;
+    text-align: right;
+    background-color: lightgray;
+    border: 1px solid lightgrey;
+    border-radius: 2px;
+}
+
+.calendar__week_day:hover {
+    background-color: rgba(255, 255, 0, 0.5);
     cursor: pointer;
-  }
-  #calendar2 tbody td {
-    border:1px solid lightgray;
-    background-color: rgba(211, 211, 211,0.3);
-    
-  }
-  #calendar2 tbody td.today {
-    background: rgba(255, 255, 0, 0.4);
-    
-  }
-  .calendar__days{
-    height:40px;
-    font-weight:bold;
-    font-size: 20px;
-  }
+}
